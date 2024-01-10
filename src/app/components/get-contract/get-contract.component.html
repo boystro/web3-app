@@ -1,1 +1,22 @@
-<p>get-contract works!</p>
+<div class="get-input" *ngIf="!patientData">
+  <span class="material-symbols-sharp"> tag </span>
+  <input type="text" placeholder="Contract Hash" />
+  <button (click)="getContract()">
+    <span class="material-symbols-sharp"> send </span>
+  </button>
+</div>
+
+<div class="card" *ngIf="patientData">
+  <button class="close-btn" (click)="closeContract()">
+    <span class="material-symbols-sharp"> close </span>
+  </button>
+  <div class="wrapper">
+    <h3>{{ patientData.name }}</h3>
+    <div class="age">{{ patientData.age }} <span>years old</span></div>
+  </div>
+  <p>{{ patientData.message }}</p>
+  <button>
+    <span class="material-symbols-sharp"> download </span>
+    <span>Attached File</span>
+  </button>
+</div>

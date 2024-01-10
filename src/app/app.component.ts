@@ -32,6 +32,7 @@ export class AppComponent {
   }
 
   get metamaskState() {
+    return MetaMaskState.Connected;
     if (this.connected) return MetaMaskState.Connected;
     if (this.metamaskInstalled) return MetaMaskState.NotConnected;
     return MetaMaskState.NotInstalled;

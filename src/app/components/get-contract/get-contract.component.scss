@@ -1,0 +1,96 @@
+.get-input {
+  display: flex;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: max-content;
+
+  & > span {
+    display: grid;
+    place-items: center;
+    padding: 0.5em;
+  }
+
+  transition: outline 150ms ease-in;
+  &:focus-within {
+    outline: 1px solid black;
+  }
+}
+
+input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  background-color: black;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.5em 1em;
+  display: grid;
+  place-items: center;
+  transition: outline 150ms ease-out;
+
+  &:focus {
+    outline: 4px solid rgba(0, 0, 0, 0.25);
+    outline-offset: 2px;
+  }
+}
+
+.card {
+  border: 1px solid gray;
+  padding: 1em;
+  min-width: 300px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+
+  .age {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    * + * {
+      margin-left: 0.5em;
+      padding-left: 0.5em;
+      border-left: 1px solid lightgray;
+    }
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  button {
+    display: flex;
+
+    * + * {
+      margin-left: 0.5em;
+    }
+  }
+}
+
+.close-btn {
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+  padding: 0.5em;
+  position: absolute;
+  background-color: transparent;
+  color: black;
+
+  border-radius: 50%;
+
+  transition:
+    background-color 150ms ease,
+    outline 150ms ease-in;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

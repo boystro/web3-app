@@ -27,4 +27,18 @@ body {
   color: white;
   padding: 1em;
   border: 1px solid black;
+  transition: all 150ms ease;
+
+  &:focus {
+    outline: 4px solid rgba(0, 0, 0, 0.3);
+    outline-offset: 2px;
+  }
+}
+
+.material-symbols-sharp {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 200,
+    "GRAD" 0,
+    "opsz" 20;
 }
