@@ -67,3 +67,14 @@ footer {
     text-align: right;
   }
 }
+
+.my-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: all 200ms ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: rgb(196, 0, 0);
+  }
+}

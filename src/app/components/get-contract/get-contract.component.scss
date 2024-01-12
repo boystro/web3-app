@@ -13,6 +13,7 @@
   transition: outline 150ms ease-in;
   &:focus-within {
     outline: 1px solid black;
+    outline-offset: -1px;
   }
 }
 

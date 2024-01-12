@@ -32,7 +32,7 @@ export class AppComponent {
   }
 
   get metamaskState() {
-    return MetaMaskState.Connected;
+    // return MetaMaskState.Connected;
     if (this.connected) return MetaMaskState.Connected;
     if (this.metamaskInstalled) return MetaMaskState.NotConnected;
     return MetaMaskState.NotInstalled;
@@ -40,6 +40,10 @@ export class AppComponent {
 
   get accountId() {
     return this.w3s.account;
+  }
+
+  copyAccountId() {
+    if (this.accountId != null) navigator.clipboard.writeText(this.accountId);
   }
 
   connectMetamask() {

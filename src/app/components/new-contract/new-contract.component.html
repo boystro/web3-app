@@ -1,1 +1,29 @@
-<p>new-contract works!</p>
+<div class="container">
+  <div class="heading row">
+    <span class="material-symbols-sharp filled icon">person</span>
+    <h3>Your Profile & Details</h3>
+  </div>
+  <div class="row">
+    <input
+      [(ngModel)]="name"
+      class="your-name"
+      type="text"
+      placeholder="Your Name"
+    />
+    <input [(ngModel)]="age" type="number" placeholder="Age" />
+  </div>
+  <textarea [(ngModel)]="info" placeholder="Additional Info"></textarea>
+  <div class="row">
+    <input
+      id="file-input"
+      type="file"
+      [(ngModel)]="fileName"
+      (change)="setFile($event)"
+    />
+    <label for="file-input">
+      <span class="material-symbols-sharp">upload</span>
+      <div>{{ fileName.split("\\").at(-1) || "Select File" }}</div>
+    </label>
+    <button (click)="submitContract()">Submit Contract</button>
+  </div>
+</div>

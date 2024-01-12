@@ -15,7 +15,7 @@
           <span>
             {{ getAccountIdShortened() }}
           </span>
-          <button class="button">
+          <button class="button" (click)="copyAccountId()">
             <span class="material-symbols-sharp"> content_copy </span>
           </button>
         </div>
@@ -44,7 +44,9 @@
 
   <footer>
     <div class="wrapper">
-      Made with 💖 by <a href="github.com/boystro">Indranil Das</a>
+      <a class="my-link" href="github.com/boystro"
+        >Made with 💖 by Indranil Das</a
+      >
     </div>
   </footer>
 </div>
