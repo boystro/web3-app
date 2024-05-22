@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-const requiredChainId = 999;
-
 @Injectable({
   providedIn: 'root',
 })

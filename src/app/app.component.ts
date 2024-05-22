@@ -21,7 +21,9 @@ import { Web3connectService } from './services/web3connect.service';
 export class AppComponent {
   title = 'EHR | Web 3';
 
-  constructor(@Inject(Web3connectService) private w3s: Web3connectService) {}
+  constructor(@Inject(Web3connectService) private w3s: Web3connectService) {
+    this.connectMetamask();
+  }
 
   get connected() {
     return this.w3s.isConnected();

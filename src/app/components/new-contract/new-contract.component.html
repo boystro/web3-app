@@ -24,6 +24,30 @@
       <span class="material-symbols-sharp">upload</span>
       <div>{{ fileName.split("\\").at(-1) || "Select File" }}</div>
     </label>
-    <button (click)="submitContract()">Submit Contract</button>
+    <button (click)="submitContract()" [disabled]="disableSubmitContract">
+      Submit Contract
+    </button>
+  </div>
+</div>
+
+<!-- Submit Dialog -->
+<div class="modal-dialog-container" *ngIf="showHash">
+  <div class="dialog">
+    <button class="close-btn" (click)="closeDialog()">
+      <i class="material-symbols-sharp"> close </i>
+    </button>
+    <h1>Contract Created</h1>
+    <p>
+      The following <b><i>Hash</i></b> is very important, without the hash any
+      data stored is lost.<br />
+      Please copy the hash with the given button to proceed.
+    </p>
+    <div class="hash-container">
+      <span class="material-symbols-sharp"> tag </span>
+      <input type="text" placeholder="Contract Hash" disabled [value]="hash" />
+      <button (click)="copyHash()">
+        <span class="material-symbols-sharp"> content_copy </span>
+      </button>
+    </div>
   </div>
 </div>

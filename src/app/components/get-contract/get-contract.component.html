@@ -1,6 +1,6 @@
 <div class="get-input" *ngIf="!patientData">
   <span class="material-symbols-sharp"> tag </span>
-  <input type="text" placeholder="Contract Hash" />
+  <input type="text" placeholder="Contract Hash" [(ngModel)]="contractHash" />
   <button (click)="getContract()">
     <span class="material-symbols-sharp"> send </span>
   </button>
@@ -14,7 +14,7 @@
     <h3>{{ patientData.name }}</h3>
     <div class="age">{{ patientData.age }} <span>years old</span></div>
   </div>
-  <p>{{ patientData.message }}</p>
+  <p>{{ patientData.info }}</p>
   <button>
     <span class="material-symbols-sharp"> download </span>
     <span>Attached File</span>

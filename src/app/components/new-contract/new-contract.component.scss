@@ -68,6 +68,11 @@ button {
     outline: 4px solid rgba(0, 0, 0, 0.25);
     outline-offset: 2px;
   }
+
+  &:disabled {
+    background-color: lightgray;
+    cursor: default;
+  }
 }
 
 .icon {
@@ -104,5 +109,80 @@ textarea {
   &:focus {
     outline: 1px solid black;
     outline-offset: -1px;
+  }
+}
+
+// Dialog
+.modal-dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  z-index: 99;
+  display: grid;
+  place-items: center;
+
+  .dialog {
+    position: relative;
+    max-width: 500px;
+    padding: 1.5em;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .close-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 1em;
+      width: 3em;
+      height: 3em;
+      padding: 0;
+      border-radius: 50%;
+      background-color: transparent;
+      color: black;
+      outline: none;
+
+      transition: background-color 150ms ease;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  p {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    text-align: justify;
+  }
+
+  .hash-container {
+    display: flex;
+    align-items: stretch;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    input {
+      cursor: default;
+      background-color: transparent;
+      outline: none;
+      flex: 1;
+    }
+
+    & > span {
+      display: grid;
+      place-items: center;
+      padding: 0.5em;
+    }
+
+    transition: outline 150ms ease-in;
+    &:focus-within {
+      outline: 1px solid black;
+      outline-offset: -1px;
+    }
   }
 }
